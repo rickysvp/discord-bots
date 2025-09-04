@@ -200,7 +200,7 @@ module.exports = {
     if (challenger.id === target.id) {
       return interaction.reply({
         content: '你不能向自己发起决斗！',
-        ephemeral: true
+        flags: 64
       });
     }
     
@@ -208,7 +208,7 @@ module.exports = {
     if (target.bot) {
       return interaction.reply({
         content: '你不能向机器人发起决斗！',
-        ephemeral: true
+        flags: 64
       });
     }
     
@@ -218,7 +218,7 @@ module.exports = {
     if (challengerDuels.remaining <= 0) {
       return interaction.reply({
         content: `你今天已经发起了 ${challengerDuels.limit} 次决斗，请明天再来！`,
-        ephemeral: true
+        flags: 64
       });
     }
     
@@ -228,7 +228,7 @@ module.exports = {
     if (targetDuels.remaining <= 0) {
       return interaction.reply({
         content: `${target.username} 今天已经被决斗了 ${targetDuels.limit} 次，请明天再来！`,
-        ephemeral: true
+        flags: 64
       });
     }
     

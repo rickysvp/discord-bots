@@ -185,7 +185,7 @@ module.exports = {
         .setTimestamp()
         .setFooter({ text: `由 ${interaction.client.user.username} 提供`, iconURL: interaction.client.user.displayAvatarURL() });
       
-      await interaction.reply({ embeds: [failureEmbed], ephemeral: true });
+      await interaction.reply({ embeds: [failureEmbed], flags: 64 });
     }
   },
 };

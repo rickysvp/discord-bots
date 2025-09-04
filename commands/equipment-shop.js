@@ -345,7 +345,7 @@ module.exports = {
       if (availableItems.length === 0) {
         return interaction.reply({
           content: '没有找到符合条件的装备。',
-          ephemeral: true
+          flags: 64
         });
       }
       
@@ -406,7 +406,7 @@ module.exports = {
       if (!itemType || !itemData) {
         return interaction.reply({
           content: '找不到该装备。',
-          ephemeral: true
+          flags: 64
         });
       }
       
@@ -414,7 +414,7 @@ module.exports = {
       if (!itemData.purchasable) {
         return interaction.reply({
           content: '该装备不可购买。',
-          ephemeral: true
+          flags: 64
         });
       }
       
@@ -425,7 +425,7 @@ module.exports = {
       if (userData.dmon < itemData.price) {
         return interaction.reply({
           content: `你没有足够的 $dMON 购买该装备。需要 ${itemData.price} $dMON，你只有 ${userData.dmon} $dMON。`,
-          ephemeral: true
+          flags: 64
         });
       }
       
@@ -441,7 +441,7 @@ module.exports = {
         
         return interaction.reply({
           content: `购买失败: ${result.message}`,
-          ephemeral: true
+          flags: 64
         });
       }
       

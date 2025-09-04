@@ -230,7 +230,7 @@ module.exports = {
         });
       }
       
-      await interaction.reply({ embeds: [shopEmbed], ephemeral: true });
+      await interaction.reply({ embeds: [shopEmbed], flags: 64 });
       
     } else if (subcommand === 'buy') {
       // 获取角色ID
@@ -246,7 +246,7 @@ module.exports = {
       if (!serverRoles[roleId] || !serverRoles[roleId].price) {
         return interaction.reply({ 
           content: '该角色不存在或不可购买。请使用 `/shop list` 查看可购买的角色。', 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -256,7 +256,7 @@ module.exports = {
       if (roleData.quantity !== -1 && roleData.quantity <= 0) {
         return interaction.reply({ 
           content: `角色 **${roleData.name}** 已售罄。请联系服务器管理员添加更多库存。`, 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -264,7 +264,7 @@ module.exports = {
       if (roleData.purchasedBy && roleData.purchasedBy.includes(userId)) {
         return interaction.reply({ 
           content: `你已经拥有角色 **${roleData.name}**。`, 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -278,7 +278,7 @@ module.exports = {
       if (userData.dmon < rolePrice) {
         return interaction.reply({ 
           content: `你的 $dMON 不足！当前余额: ${userData.dmon} $dMON，需要: ${rolePrice} $dMON`, 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -287,7 +287,7 @@ module.exports = {
       if (!role) {
         return interaction.reply({ 
           content: '该角色在服务器中不存在。请联系服务器管理员。', 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -324,12 +324,12 @@ module.exports = {
           .setTimestamp()
           .setFooter({ text: `由 ${interaction.client.user.username} 提供`, iconURL: interaction.client.user.displayAvatarURL() });
         
-        await interaction.reply({ embeds: [successEmbed], ephemeral: true });
+        await interaction.reply({ embeds: [successEmbed], flags: 64 });
       } catch (error) {
         console.error('添加角色失败:', error);
         return interaction.reply({ 
           content: '添加角色失败。可能是权限问题，请联系服务器管理员。', 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -338,7 +338,7 @@ module.exports = {
       if (!interaction.member.permissions.has(PermissionFlagsBits.Administrator)) {
         return interaction.reply({ 
           content: '你没有权限添加商店角色。此操作需要管理员权限。', 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -360,7 +360,7 @@ module.exports = {
       if (rolesData.roles[serverId][role.id]) {
         return interaction.reply({ 
           content: `角色 **${role.name}** 已经在商店中。请使用 \`/shop edit\` 命令编辑它。`, 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -390,12 +390,12 @@ module.exports = {
           .setTimestamp()
           .setFooter({ text: `由 ${interaction.client.user.username} 提供`, iconURL: interaction.client.user.displayAvatarURL() });
         
-        await interaction.reply({ embeds: [successEmbed], ephemeral: true });
+        await interaction.reply({ embeds: [successEmbed], flags: 64 });
       } catch (error) {
         console.error('保存角色数据失败:', error);
         return interaction.reply({ 
           content: '添加角色失败。请稍后再试。', 
-          ephemeral: true 
+          flags: 64 
         });
       }
     } else if (subcommand === 'edit') {
@@ -403,7 +403,7 @@ module.exports = {
       if (!interaction.member.permissions.has(PermissionFlagsBits.Administrator)) {
         return interaction.reply({ 
           content: '你没有权限编辑商店角色。此操作需要管理员权限。', 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -425,7 +425,7 @@ module.exports = {
       if (!rolesData.roles[serverId][roleId]) {
         return interaction.reply({ 
           content: `找不到ID为 ${roleId} 的角色。请使用 \`/shop list\` 查看可用角色。`, 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -436,7 +436,7 @@ module.exports = {
       if (!role) {
         return interaction.reply({ 
           content: `服务器中不存在ID为 ${roleId} 的角色。该角色可能已被删除。`, 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -470,12 +470,12 @@ module.exports = {
           .setTimestamp()
           .setFooter({ text: `由 ${interaction.client.user.username} 提供`, iconURL: interaction.client.user.displayAvatarURL() });
         
-        await interaction.reply({ embeds: [successEmbed], ephemeral: true });
+        await interaction.reply({ embeds: [successEmbed], flags: 64 });
       } catch (error) {
         console.error('保存角色数据失败:', error);
         return interaction.reply({ 
           content: '编辑角色失败。请稍后再试。', 
-          ephemeral: true 
+          flags: 64 
         });
       }
     } else if (subcommand === 'remove') {
@@ -483,7 +483,7 @@ module.exports = {
       if (!interaction.member.permissions.has(PermissionFlagsBits.Administrator)) {
         return interaction.reply({ 
           content: '你没有权限移除商店角色。此操作需要管理员权限。', 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -502,7 +502,7 @@ module.exports = {
       if (!rolesData.roles[serverId][roleId]) {
         return interaction.reply({ 
           content: `找不到ID为 ${roleId} 的角色。请使用 \`/shop list\` 查看可用角色。`, 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -524,12 +524,12 @@ module.exports = {
           .setTimestamp()
           .setFooter({ text: `由 ${interaction.client.user.username} 提供`, iconURL: interaction.client.user.displayAvatarURL() });
         
-        await interaction.reply({ embeds: [successEmbed], ephemeral: true });
+        await interaction.reply({ embeds: [successEmbed], flags: 64 });
       } catch (error) {
         console.error('保存角色数据失败:', error);
         return interaction.reply({ 
           content: '移除角色失败。请稍后再试。', 
-          ephemeral: true 
+          flags: 64 
         });
       }
     }

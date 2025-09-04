@@ -53,7 +53,7 @@ module.exports = {
     if (!interaction.memberPermissions.has(PermissionFlagsBits.ManageRoles)) {
       return interaction.reply({ 
         content: '你没有权限提交高级角色。此命令需要"管理角色"权限。', 
-        ephemeral: true 
+        flags: 64 
       });
     }
     
@@ -99,11 +99,11 @@ module.exports = {
         .setTimestamp()
         .setFooter({ text: `由 ${interaction.client.user.username} 提供`, iconURL: interaction.client.user.displayAvatarURL() });
       
-      await interaction.reply({ embeds: [submitEmbed], ephemeral: true });
+      await interaction.reply({ embeds: [submitEmbed], flags: 64 });
     } else {
       await interaction.reply({ 
         content: '提交角色时出错，请稍后再试。', 
-        ephemeral: true 
+        flags: 64 
       });
     }
   },

@@ -30,7 +30,7 @@ module.exports = {
     if (interaction.user.id !== developerId) {
       return interaction.reply({ 
         content: '只有机器人开发者可以使用此命令。', 
-        ephemeral: true 
+        flags: 64 
       });
     }
     
@@ -42,7 +42,7 @@ module.exports = {
     if (Object.keys(pendingRoles).length === 0) {
       return interaction.reply({ 
         content: '当前没有待审核的高级角色。', 
-        ephemeral: true 
+        flags: 64 
       });
     }
     
@@ -74,6 +74,6 @@ module.exports = {
       value: '使用 `/review-role server-id:服务器ID role-id:角色ID action:approve/reject reason:原因` 命令进行审核'
     });
     
-    await interaction.reply({ embeds: [pendingEmbed], ephemeral: true });
+    await interaction.reply({ embeds: [pendingEmbed], flags: 64 });
   },
 };

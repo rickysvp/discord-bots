@@ -65,7 +65,7 @@ module.exports = {
     if (interaction.user.id !== developerId) {
       return interaction.reply({ 
         content: '只有机器人开发者可以使用此命令。', 
-        ephemeral: true 
+        flags: 64 
       });
     }
     
@@ -82,7 +82,7 @@ module.exports = {
     if (!rolesData.pendingRoles[serverId] || !rolesData.pendingRoles[serverId][roleId]) {
       return interaction.reply({ 
         content: `找不到待审核的角色。服务器ID: ${serverId}, 角色ID: ${roleId}`, 
-        ephemeral: true 
+        flags: 64 
       });
     }
     
@@ -138,11 +138,11 @@ module.exports = {
           )
           .setTimestamp();
         
-        await interaction.reply({ embeds: [approveEmbed], ephemeral: true });
+        await interaction.reply({ embeds: [approveEmbed], flags: 64 });
       } else {
         await interaction.reply({ 
           content: '保存数据时出错，请稍后再试。', 
-          ephemeral: true 
+          flags: 64 
         });
       }
     } else if (action === 'reject') {
@@ -167,11 +167,11 @@ module.exports = {
           )
           .setTimestamp();
         
-        await interaction.reply({ embeds: [rejectEmbed], ephemeral: true });
+        await interaction.reply({ embeds: [rejectEmbed], flags: 64 });
       } else {
         await interaction.reply({ 
           content: '保存数据时出错，请稍后再试。', 
-          ephemeral: true 
+          flags: 64 
         });
       }
     }

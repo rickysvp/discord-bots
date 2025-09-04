@@ -206,12 +206,12 @@ async function handleJoinButton(interaction) {
     const currentGame = gameData.games[interaction.guildId];
     
     if (!currentGame || currentGame.state !== gameStates.RECRUITING) {
-        return interaction.reply({ content: '报名已结束！', ephemeral: true });
+        return interaction.reply({ content: '报名已结束！', flags: 64 });
     }
     
     // 检查玩家是否已经加入
     if (currentGame.players.some(player => player.id === interaction.user.id)) {
-        return interaction.reply({ content: '你已经加入了游戏！', ephemeral: true });
+        return interaction.reply({ content: '你已经加入了游戏！', flags: 64 });
     }
     
     // 添加玩家
@@ -243,7 +243,7 @@ async function handleJoinButton(interaction) {
         console.error('更新消息时出错:', error);
     }
     
-    await interaction.reply({ content: '你已成功加入皇家大乱斗！', ephemeral: true });
+    await interaction.reply({ content: '你已成功加入皇家大乱斗！', flags: 64 });
 }
 
 module.exports = {
@@ -272,7 +272,7 @@ module.exports = {
         if (subcommand === 'start') {
             // 检查是否有管理员权限
             if (!interaction.member.permissions.has('MANAGE_GUILD')) {
-                return interaction.reply({ content: '只有管理员可以开始皇家大乱斗游戏！', ephemeral: true });
+                return interaction.reply({ content: '只有管理员可以开始皇家大乱斗游戏！', flags: 64 });
             }
             
             // 加载游戏数据
@@ -282,7 +282,7 @@ module.exports = {
             if (gameData.games[interaction.guildId] && 
                 (gameData.games[interaction.guildId].state === gameStates.RECRUITING || 
                  gameData.games[interaction.guildId].state === gameStates.RUNNING)) {
-                return interaction.reply({ content: '已经有一场皇家大乱斗游戏在进行中！', ephemeral: true });
+                return interaction.reply({ content: '已经有一场皇家大乱斗游戏在进行中！', flags: 64 });
             }
             
             // 设置报名时间
@@ -317,11 +317,12 @@ module.exports = {
                 .setFooter({ text: '游戏将在报名结束后自动开始' });
             
             // 发送报名消息
-            const message = await interaction.reply({ 
+            await interaction.reply({ 
                 embeds: [recruitEmbed], 
-                components: [row],
-                fetchReply: true
+                components: [row]
             });
+            
+            const message = await interaction.fetchReply();
             
             // 创建按钮收集器
             const collector = message.createMessageComponentCollector({ 
@@ -336,12 +337,12 @@ module.exports = {
                 const currentGame = currentGameData.games[interaction.guildId];
                 
                 if (!currentGame || currentGame.state !== gameStates.RECRUITING) {
-                    return i.reply({ content: '报名已结束！', ephemeral: true });
+                    return i.reply({ content: '报名已结束！', flags: 64 });
                 }
                 
                 // 检查玩家是否已经加入
                 if (currentGame.players.some(player => player.id === i.user.id)) {
-                    return i.reply({ content: '你已经加入了游戏！', ephemeral: true });
+                    return i.reply({ content: '你已经加入了游戏！', flags: 64 });
                 }
                 
                 // 添加玩家
@@ -362,7 +363,7 @@ module.exports = {
                 );
                 
                 await message.edit({ embeds: [recruitEmbed] });
-                await i.reply({ content: '你已成功加入皇家大乱斗！', ephemeral: true });
+                await i.reply({ content: '你已成功加入皇家大乱斗！', flags: 64 });
             });
             
             // 报名结束后开始游戏

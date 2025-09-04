@@ -380,7 +380,7 @@ module.exports = {
       if (inventoryIndex < 0 || inventoryIndex >= userEquipment.inventory.length) {
         return interaction.reply({
           content: '无效的背包索引，请使用 `/inventory view` 查看你的背包',
-          ephemeral: true
+          flags: 64
         });
       }
       
@@ -396,7 +396,7 @@ module.exports = {
       if (!result.success) {
         return interaction.reply({
           content: `出售失败: ${result.message}`,
-          ephemeral: true
+          flags: 64
         });
       }
       
@@ -426,7 +426,7 @@ module.exports = {
       if (targetUser.id === interaction.client.user.id) {
         return interaction.reply({
           content: '你不能赠送装备给机器人',
-          ephemeral: true
+          flags: 64
         });
       }
       
@@ -434,7 +434,7 @@ module.exports = {
       if (targetUser.id === userId) {
         return interaction.reply({
           content: '你不能赠送装备给自己',
-          ephemeral: true
+          flags: 64
         });
       }
       
@@ -445,7 +445,7 @@ module.exports = {
       if (inventoryIndex < 0 || inventoryIndex >= userEquipment.inventory.length) {
         return interaction.reply({
           content: '无效的背包索引，请使用 `/inventory view` 查看你的背包',
-          ephemeral: true
+          flags: 64
         });
       }
       
@@ -458,7 +458,7 @@ module.exports = {
       if (targetEquipment.inventory.length >= 12) {
         return interaction.reply({
           content: `${targetUser.username} 的背包已满，无法接收装备`,
-          ephemeral: true
+          flags: 64
         });
       }
       
@@ -468,7 +468,7 @@ module.exports = {
       if (!removeResult.success) {
         return interaction.reply({
           content: `赠送失败: ${removeResult.message}`,
-          ephemeral: true
+          flags: 64
         });
       }
       
@@ -481,7 +481,7 @@ module.exports = {
         
         return interaction.reply({
           content: `赠送失败: ${addResult.message}`,
-          ephemeral: true
+          flags: 64
         });
       }
       

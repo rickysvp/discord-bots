@@ -210,7 +210,7 @@ module.exports = {
         .setTimestamp()
         .setFooter({ text: `由 ${interaction.client.user.username} 提供`, iconURL: interaction.client.user.displayAvatarURL() });
       
-      await interaction.reply({ embeds: [infoEmbed], ephemeral: true });
+      await interaction.reply({ embeds: [infoEmbed], flags: 64 });
       
     } else if (subcommand === 'bet') {
       // 检查今日游戏次数
@@ -219,7 +219,7 @@ module.exports = {
       if (dailyGames.remaining <= 0) {
         return interaction.reply({ 
           content: `你今天已经玩了 ${dailyGames.limit} 次骰子游戏，请明天再来！`, 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -238,7 +238,7 @@ module.exports = {
       if (userData.dmon < totalDMON) {
         return interaction.reply({ 
           content: `你的 $dMON 不足！当前余额: ${userData.dmon} $dMON，需要: ${totalDMON} $dMON`, 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -253,7 +253,7 @@ module.exports = {
         if (diceNumbers.includes(dice2)) {
           return interaction.reply({ 
             content: `下注的点数不能重复！你已经选择了点数 ${dice2}`, 
-            ephemeral: true 
+            flags: 64 
           });
         }
         diceNumbers.push(dice2);
@@ -263,7 +263,7 @@ module.exports = {
         if (diceNumbers.includes(dice3)) {
           return interaction.reply({ 
             content: `下注的点数不能重复！你已经选择了点数 ${dice3}`, 
-            ephemeral: true 
+            flags: 64 
           });
         }
         diceNumbers.push(dice3);

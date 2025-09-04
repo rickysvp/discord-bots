@@ -356,7 +356,7 @@ module.exports = {
     if (hunts.remaining <= 0) {
       return interaction.reply({ 
         content: `你今天已经狩猎了 ${hunts.limit} 次，请明天再来！`, 
-        ephemeral: true 
+        flags: 64 
       });
     }
     
@@ -367,7 +367,7 @@ module.exports = {
     if (!monster) {
       return interaction.reply({ 
         content: '找不到该怪物。', 
-        ephemeral: true 
+        flags: 64 
       });
     }
     

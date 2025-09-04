@@ -22,10 +22,14 @@ module.exports = {
         
         const content = '执行此命令时出错！';
         
-        if (interaction.replied || interaction.deferred) {
-          await interaction.followUp({ content, ephemeral: true });
-        } else {
-          await interaction.reply({ content, ephemeral: true });
+        try {
+          if (interaction.replied || interaction.deferred) {
+            await interaction.followUp({ content, flags: 64 });
+          } else {
+            await interaction.reply({ content, flags: 64 });
+          }
+        } catch (replyError) {
+          console.error('回复交互时出错:', replyError);
         }
       }
     }
@@ -43,15 +47,25 @@ module.exports = {
               await rumbleCommand.handleJoinButton(interaction);
             } else {
               console.error('皇家大乱斗命令中缺少 handleJoinButton 方法');
-              await interaction.reply({ content: '处理按钮时出错！', ephemeral: true });
+              if (!interaction.replied) {
+                await interaction.reply({ content: '处理按钮时出错！', flags: 64 });
+              }
             }
           } else {
             console.error('未找到皇家大乱斗命令');
-            await interaction.reply({ content: '处理按钮时出错！', ephemeral: true });
+            if (!interaction.replied) {
+              await interaction.reply({ content: '处理按钮时出错！', flags: 64 });
+            }
           }
         } catch (error) {
           console.error('处理皇家大乱斗按钮时出错:', error);
-          await interaction.reply({ content: '处理按钮时出错！', ephemeral: true });
+          if (!interaction.replied) {
+            try {
+              await interaction.reply({ content: '处理按钮时出错！', flags: 64 });
+            } catch (replyError) {
+              console.error('回复按钮交互时出错:', replyError);
+            }
+          }
         }
       }
       

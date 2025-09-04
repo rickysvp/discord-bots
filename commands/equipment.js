@@ -519,7 +519,7 @@ module.exports = {
         
         await interaction.reply({ embeds: [equipEmbed] });
       } else {
-        await interaction.reply({ content: result.message, ephemeral: true });
+        await interaction.reply({ content: result.message, flags: 64 });
       }
       
     } else if (subcommand === 'unequip') {
@@ -542,7 +542,7 @@ module.exports = {
         
         await interaction.reply({ embeds: [unequipEmbed] });
       } else {
-        await interaction.reply({ content: result.message, ephemeral: true });
+        await interaction.reply({ content: result.message, flags: 64 });
       }
       
     } else if (subcommand === 'shop') {
@@ -596,7 +596,7 @@ module.exports = {
         }
       }
       
-      await interaction.reply({ embeds: [shopEmbed], ephemeral: true });
+      await interaction.reply({ embeds: [shopEmbed], flags: 64 });
       
     } else if (subcommand === 'buy') {
       const itemId = interaction.options.getString('item_id');
@@ -620,7 +620,7 @@ module.exports = {
       if (!itemFound) {
         return interaction.reply({ 
           content: '找不到该装备。请使用 `/equipment shop` 查看可用装备。', 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -628,7 +628,7 @@ module.exports = {
       if (userData.dmon < itemData.price) {
         return interaction.reply({ 
           content: `你的 $dMON 不足！当前余额: ${userData.dmon} $dMON，需要: ${itemData.price} $dMON`, 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -670,7 +670,7 @@ module.exports = {
       } else {
         // 如果添加失败，退还 $dMON
         updateUserServerDMON(userId, serverId, itemData.price);
-        await interaction.reply({ content: result.message, ephemeral: true });
+        await interaction.reply({ content: result.message, flags: 64 });
       }
     }
   },
