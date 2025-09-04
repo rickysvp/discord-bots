@@ -1,0 +1,387 @@
+{
+  "items": {
+    "weapon": {
+      "wooden_sword": {
+        "name": "木剑",
+        "type": "weapon",
+        "rarity": "common",
+        "color": "white",
+        "price": 200,
+        "stats": {
+          "attack": 5,
+          "dmonBonus": 10
+        },
+        "description": "一把简单的木剑，适合初学者使用。"
+      },
+      "iron_sword": {
+        "name": "铁剑",
+        "type": "weapon",
+        "rarity": "uncommon",
+        "color": "green",
+        "price": 500,
+        "stats": {
+          "attack": 15,
+          "dmonBonus": 20
+        },
+        "description": "一把坚固的铁剑，能够造成不错的伤害。"
+      },
+      "steel_sword": {
+        "name": "钢剑",
+        "type": "weapon",
+        "rarity": "rare",
+        "color": "blue",
+        "price": 1200,
+        "stats": {
+          "attack": 30,
+          "dmonBonus": 35
+        },
+        "description": "一把锋利的钢剑，能够轻松切割敌人。"
+      },
+      "dragon_slayer": {
+        "name": "屠龙刀",
+        "type": "weapon",
+        "rarity": "epic",
+        "color": "purple",
+        "price": 3000,
+        "stats": {
+          "attack": 50,
+          "dmonBonus": 50
+        },
+        "description": "传说中能够屠龙的神器，拥有强大的力量。"
+      }
+    },
+    "shield": {
+      "wooden_shield": {
+        "name": "木盾",
+        "type": "shield",
+        "rarity": "common",
+        "color": "white",
+        "price": 150,
+        "stats": {
+          "defense": 5,
+          "dmonBonus": 10
+        },
+        "description": "一面简单的木盾，提供基础防护。"
+      },
+      "iron_shield": {
+        "name": "铁盾",
+        "type": "shield",
+        "rarity": "uncommon",
+        "color": "green",
+        "price": 400,
+        "stats": {
+          "defense": 15,
+          "dmonBonus": 20
+        },
+        "description": "一面坚固的铁盾，能够抵挡大部分攻击。"
+      },
+      "tower_shield": {
+        "name": "塔盾",
+        "type": "shield",
+        "rarity": "rare",
+        "color": "blue",
+        "price": 1000,
+        "stats": {
+          "defense": 30,
+          "dmonBonus": 35
+        },
+        "description": "一面巨大的塔盾，提供全面的防护。"
+      },
+      "dragon_scale_shield": {
+        "name": "龙鳞盾",
+        "type": "shield",
+        "rarity": "epic",
+        "color": "purple",
+        "price": 2500,
+        "stats": {
+          "defense": 45,
+          "dmonBonus": 50
+        },
+        "description": "由龙鳞制成的盾牌，几乎能够抵挡任何攻击。"
+      }
+    },
+    "helmet": {
+      "leather_cap": {
+        "name": "皮帽",
+        "type": "helmet",
+        "rarity": "common",
+        "color": "white",
+        "price": 100,
+        "stats": {
+          "defense": 3,
+          "dmonBonus": 5
+        },
+        "description": "一顶简单的皮帽，提供基础头部防护。"
+      },
+      "iron_helmet": {
+        "name": "铁盔",
+        "type": "helmet",
+        "rarity": "uncommon",
+        "color": "green",
+        "price": 300,
+        "stats": {
+          "defense": 10,
+          "dmonBonus": 15
+        },
+        "description": "一顶坚固的铁盔，能够保护头部免受伤害。"
+      },
+      "full_helmet": {
+        "name": "全覆式头盔",
+        "type": "helmet",
+        "rarity": "rare",
+        "color": "blue",
+        "price": 800,
+        "stats": {
+          "defense": 20,
+          "dmonBonus": 25
+        },
+        "description": "一顶全覆式头盔，提供全面的头部防护。"
+      },
+      "crown_of_kings": {
+        "name": "王者之冠",
+        "type": "helmet",
+        "rarity": "epic",
+        "color": "purple",
+        "price": 2000,
+        "stats": {
+          "defense": 35,
+          "dmonBonus": 40
+        },
+        "description": "传说中的王者之冠，拥有强大的魔力。"
+      }
+    },
+    "armor": {
+      "leather_armor": {
+        "name": "皮甲",
+        "type": "armor",
+        "rarity": "common",
+        "color": "white",
+        "price": 200,
+        "stats": {
+          "defense": 8,
+          "dmonBonus": 10
+        },
+        "description": "一件简单的皮甲，提供基础躯干防护。"
+      },
+      "chain_mail": {
+        "name": "锁子甲",
+        "type": "armor",
+        "rarity": "uncommon",
+        "color": "green",
+        "price": 500,
+        "stats": {
+          "defense": 20,
+          "dmonBonus": 20
+        },
+        "description": "一件锁子甲，由金属环相互连接而成，提供不错的防护。"
+      },
+      "plate_armor": {
+        "name": "板甲",
+        "type": "armor",
+        "rarity": "rare",
+        "color": "blue",
+        "price": 1200,
+        "stats": {
+          "defense": 35,
+          "dmonBonus": 30
+        },
+        "description": "一件坚固的板甲，能够抵挡大部分攻击。"
+      },
+      "dragon_scale_armor": {
+        "name": "龙鳞甲",
+        "type": "armor",
+        "rarity": "epic",
+        "color": "purple",
+        "price": 3000,
+        "stats": {
+          "defense": 50,
+          "dmonBonus": 45
+        },
+        "description": "由龙鳞制成的铠甲，提供无与伦比的防护。"
+      }
+    },
+    "gloves": {
+      "leather_gloves": {
+        "name": "皮手套",
+        "type": "gloves",
+        "rarity": "common",
+        "color": "white",
+        "price": 80,
+        "stats": {
+          "defense": 2,
+          "dmonBonus": 5
+        },
+        "description": "一双简单的皮手套，提供基础手部防护。"
+      },
+      "iron_gauntlets": {
+        "name": "铁护手",
+        "type": "gloves",
+        "rarity": "uncommon",
+        "color": "green",
+        "price": 250,
+        "stats": {
+          "defense": 8,
+          "attack": 5,
+          "dmonBonus": 15
+        },
+        "description": "一双铁制护手，既能保护手部，又能增强攻击力。"
+      },
+      "spiked_gauntlets": {
+        "name": "尖刺护手",
+        "type": "gloves",
+        "rarity": "rare",
+        "color": "blue",
+        "price": 700,
+        "stats": {
+          "defense": 15,
+          "attack": 15,
+          "dmonBonus": 25
+        },
+        "description": "一双带有尖刺的护手，能够在战斗中造成额外伤害。"
+      },
+      "gloves_of_power": {
+        "name": "力量手套",
+        "type": "gloves",
+        "rarity": "epic",
+        "color": "purple",
+        "price": 1800,
+        "stats": {
+          "defense": 25,
+          "attack": 25,
+          "dmonBonus": 35
+        },
+        "description": "传说中的力量手套，能够大幅增强佩戴者的力量。"
+      }
+    },
+    "boots": {
+      "leather_boots": {
+        "name": "皮靴",
+        "type": "boots",
+        "rarity": "common",
+        "color": "white",
+        "price": 100,
+        "stats": {
+          "defense": 3,
+          "dmonBonus": 5
+        },
+        "description": "一双简单的皮靴，提供基础脚部防护。"
+      },
+      "iron_boots": {
+        "name": "铁靴",
+        "type": "boots",
+        "rarity": "uncommon",
+        "color": "green",
+        "price": 280,
+        "stats": {
+          "defense": 10,
+          "dmonBonus": 15
+        },
+        "description": "一双铁制靴子，能够保护脚部免受伤害。"
+      },
+      "swift_boots": {
+        "name": "迅捷之靴",
+        "type": "boots",
+        "rarity": "rare",
+        "color": "blue",
+        "price": 750,
+        "stats": {
+          "defense": 18,
+          "dmonBonus": 25
+        },
+        "description": "一双能够提高速度的靴子，让佩戴者更加灵活。"
+      },
+      "boots_of_hermes": {
+        "name": "赫尔墨斯之靴",
+        "type": "boots",
+        "rarity": "epic",
+        "color": "purple",
+        "price": 1900,
+        "stats": {
+          "defense": 30,
+          "dmonBonus": 40
+        },
+        "description": "传说中的神速之靴，拥有无与伦比的速度。"
+      }
+    }
+  },
+  "monsters": {
+    "goblin": {
+      "name": "哥布林",
+      "level": 1,
+      "hp": 50,
+      "attack": 10,
+      "defense": 5,
+      "dmonReward": {
+        "min": 10,
+        "max": 50
+      },
+      "dropChance": 0.3,
+      "possibleDrops": ["wooden_sword", "wooden_shield", "leather_cap", "leather_armor", "leather_gloves", "leather_boots"]
+    },
+    "wolf": {
+      "name": "狼",
+      "level": 2,
+      "hp": 80,
+      "attack": 15,
+      "defense": 8,
+      "dmonReward": {
+        "min": 20,
+        "max": 70
+      },
+      "dropChance": 0.25,
+      "possibleDrops": ["wooden_sword", "wooden_shield", "leather_cap", "leather_armor", "leather_gloves", "leather_boots"]
+    },
+    "bandit": {
+      "name": "强盗",
+      "level": 5,
+      "hp": 150,
+      "attack": 25,
+      "defense": 15,
+      "dmonReward": {
+        "min": 50,
+        "max": 150
+      },
+      "dropChance": 0.4,
+      "possibleDrops": ["iron_sword", "iron_shield", "iron_helmet", "chain_mail", "iron_gauntlets", "iron_boots"]
+    },
+    "orc": {
+      "name": "兽人",
+      "level": 10,
+      "hp": 300,
+      "attack": 40,
+      "defense": 30,
+      "dmonReward": {
+        "min": 100,
+        "max": 300
+      },
+      "dropChance": 0.35,
+      "possibleDrops": ["iron_sword", "iron_shield", "iron_helmet", "chain_mail", "iron_gauntlets", "iron_boots"]
+    },
+    "troll": {
+      "name": "巨魔",
+      "level": 15,
+      "hp": 500,
+      "attack": 60,
+      "defense": 45,
+      "dmonReward": {
+        "min": 200,
+        "max": 500
+      },
+      "dropChance": 0.45,
+      "possibleDrops": ["steel_sword", "tower_shield", "full_helmet", "plate_armor", "spiked_gauntlets", "swift_boots"]
+    },
+    "dragon": {
+      "name": "龙",
+      "level": 30,
+      "hp": 1000,
+      "attack": 100,
+      "defense": 80,
+      "dmonReward": {
+        "min": 500,
+        "max": 1500
+      },
+      "dropChance": 0.6,
+      "possibleDrops": ["dragon_slayer", "dragon_scale_shield", "crown_of_kings", "dragon_scale_armor", "gloves_of_power", "boots_of_hermes"]
+    }
+  }
+}
