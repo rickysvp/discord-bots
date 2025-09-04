@@ -27,9 +27,10 @@ app.get('/', (req, res) => {
   });
 });
 
-// 启动HTTP服务器
-app.listen(PORT, () => {
+// 启动HTTP服务器 - Render需要监听所有接口
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`HTTP服务器运行在端口 ${PORT}`);
+  console.log(`Render.com端口绑定成功，监听地址: 0.0.0.0:${PORT}`);
 });
 
 // 创建新的客户端实例
